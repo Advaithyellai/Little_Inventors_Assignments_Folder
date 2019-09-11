@@ -54,13 +54,7 @@ def bal(blabla):
             numer = asb
             n = asb
         except:
-            try:
-                asd = str(eval(E.get()))
-                n = asd
-                numer = asd
-                S.set(n)
-            except:
-                S.set(" Error ")
+            S.set(" Error ")
     return
 def screen():
     global numer, a, n
@@ -71,7 +65,7 @@ def screen():
 root = tk.Tk()
 root.configure(bg = "blue")
 S = tk.StringVar()
-E = tk.Entry(root, text = S, width = 15)
+E = tk.Label(root, textvariable = S, width = 15)
 E.grid(columnspan = 4, ipadx = 40)
 E.bind('<Return>', bal)
 S.set("this is a calclator")
@@ -81,7 +75,7 @@ tk.Button(root, text = " exit ", width = 10, height = 4, command = lambda: exit(
          , bg = "red").grid(row = 1, column = 1)
 tk.Button(root, text = " % ", width = 10, height = 4, command = lambda: number("/100", "%")\
          , bg = "red").grid(row = 1, column = 2)
-tk.Button(root, text = " ÷ ", width = 10, height = 4, command = lambda: number("/", "÷")\
+tk.Button(root, text = " / ", width = 10, height = 4, command = lambda: number("/", "÷")\
          , bg = "red").grid(row = 1, column = 3)
 tk.Button(root, text = " √ ", width = 10, height = 4, command = lambda: number("", "√")\
          , bg = "red").grid(row = 1, column = 4)
