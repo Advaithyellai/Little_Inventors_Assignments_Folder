@@ -3,14 +3,16 @@ print("Welcome to my amazing game (Not like Advaith.Basireddy's)")
 print("This game is about story telling")
 d = input("What's your name  ")
 j = input("What do you want to name your charecter   ")
-print("Choose your weponry,", d)
+print("Choose your weponry for {}, {}".format(j, d))
 print("1. No weapon")
 print("2. Daggers")
 print("3. Bow")
 print("4. Sword")
 print("5. Gun")
-a = int(input("Choose your bloody weapon  "))
-print("Ok. %d is chosen " %(a))
+weaponry = ['No weapon', 'Daggers', 'Bow', 'Sword', 'Gun']
+a = int(input("Choose your weapon  "))
+a = weaponry[a-1]
+print("%s is chosen " %(a))
 print("Which shield do you choose")
 b = int(input("1 = metal, 2 = wooden, 3 = no shield.  "))
 if b ==1:
@@ -123,7 +125,7 @@ elif e == 2:
         print("He tells,'Ok I'll reach there in 2 min, google maps'.")
         time.sleep(2)
         print("Now, human-evil sees him")
-        print("He fights hi, but he looses. Then human-evil kills him")
+        print("He fights him, but he loses. Then human-evil kills him")
         print("Now, she gets up from her shock and shots you")
         print("Now you are dead")
         print("Thanks for playing this", d)
@@ -272,7 +274,7 @@ elif e == 6:
         print("Thanks for playing %s/%s" %(d, j))
         exit("Tata, bye-bye")
 else:
-    print("Sorry cant help with that")
+    exit("Sorry cant help with that")
 print("Congrats!")
 print("Now you go to a training school")
 print("There are 2 trained professionals, pick one to coach you")
@@ -280,6 +282,7 @@ print("1 = Kris = swords(attack and defence)")
 print("2 = Bablu = shield(attack and defence)")
 l = int(input("Pick a coach for you "))
 if l == 1:
+    strn = ""
     n = '____________'
     print("Ok training")
     print("He'll train in 12 days(in our world 12 seconds)")
@@ -287,9 +290,11 @@ if l == 1:
     for m in range(0, 12):
         n = list(n)
         time.sleep(1)
-        n[m] = '-'
-        n = str(n)
-        print(n, end="\r")
+        n[m] = str(m)
+        for ele in n:
+            strn = strn + ele + ' '
+        print(strn)
+        strn = ""
     print("Done training")
     print("You know-;")
     print("sword shield, sword block, sword clash, cut arrow, sword throw, sword jump and sword slash")
@@ -315,13 +320,11 @@ if l == 1:
             print("He kills you")
             print("Thanks for playing this %s or %s" %(d, j))
             exit("Tata, bye-bye")
-        elif p==1:
+        elif p == 2:
             print("Ok running")
             time.sleep(2)
-            print("He is faster than you")
-            print("He catches you and kills you")
-            print("Thanks for playing this %s or %s" %(d, j))
-            exit("Tata, bye-bye")
+            print("He is slower than you")
+            exit("You ran away, but a minion kills you")
         else:
             print("Ok dying")
             time.sleep(2)
@@ -348,16 +351,19 @@ if l == 1:
         print("Thanks for playing %s or %s" %(d, j))
         exit("Tata, bye-bye")
 elif l == 2:
-    q = '____________'
+    strn = ""
+    n = '____________'
     print("Ok training")
     print("He'll train in 12 days(in our world 12 seconds)")
     time.sleep(1)
-    for r in range(0, 12):
-        q = str(q)
-        print(q, end = "\r")
+    for m in range(0, 12):
+        n = list(n)
         time.sleep(1)
-        q = list(q)
-        q[r] = '-'
+        n[m] = str(m)
+        for ele in n:
+            strn = strn + ele + ' '
+        print(strn)
+        strn = ""
     print("Done training")
     print("You know-;")
     print("sword shield, shield block, shield strike, cut arrow, shield throw, shield jump and shield slash")
@@ -383,7 +389,7 @@ elif l == 2:
             print("He kills you")
             print("Thanks for playing this %s or %s" %(d, j))
             exit("Tata, bye-bye")
-        elif p==1:
+        elif p == 2:
             print("Ok running")
             time.sleep(2)
             print("He is faster than you")
@@ -424,7 +430,7 @@ else:
     print("Ok ignored")
     print("When you are going Bablu thinks you are a spy of human-evil")
     print("Then he kills you by stabbing your stomach while going")
-    print("Thanks for playing %s or %s" %(d, j))
+    exit("Thanks for playing %s or %s" %(d, j))
 print("The thing is written as -; (] !- @!@-^^} (*?~ *@-^` -]||]`]= for human-evil")
 print("Bablu said that the only way to crack it is to get it from human-evil's secret hide out")
 print("Then another person asks ,'But where is his hide out'")
@@ -539,6 +545,7 @@ if ad == 1:
     print("It says -;")
     print("The code is -;")
     print("(] !- @!@-^^} (*?~ *@-^` -]||]`]=")
+    print("After cracking 'do it fifteen days after tommorow'")
     ae = 0
     while(ae < 1000):
         ae = ae+1
